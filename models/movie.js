@@ -29,7 +29,7 @@ let movieSchema = new Schema({
     Production: String,
     Website: String,
     Response: String,
-	//refferes to Comment model
+//refferes to Comment model
     Comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }]	
 });
 
