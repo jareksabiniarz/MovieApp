@@ -1,13 +1,18 @@
 // @ts-check								
 const express = require("express");
-const app = express();						//set up express app
+//set up express app
+const app = express();						
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const commentsController = require("./controllers/commentsController");	//import of commentsController
-const moviesController = require("./controllers/moviesController");		//import of moviesController
-const {parseQueryCaseInsensitive}  = require("./middleware");			//import of middleware
-
-mongoose.connect("mongodb://localhost:27017/moviedb", { useNewUrlParser: true });	//connect to mongodb
+//import of commentsController
+const commentsController = require("./controllers/commentsController");	
+//import of moviesController
+const moviesController = require("./controllers/moviesController");
+//import of middleware		
+const {parseQueryCaseInsensitive}  = require("./middleware");
+			
+//connect to mongodb
+mongoose.connect("mongodb://localhost:27017/moviedb", { useNewUrlParser: true });	
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

@@ -5,7 +5,7 @@ function parseQueryCaseInsensitive() {
             req.query[key] = req.query[key].toLowerCase();
             req.query[key.toLowerCase()] = req.query[key];
         }
-        next();			//becouse it's a middleware
+        next();			
     };
 }
 

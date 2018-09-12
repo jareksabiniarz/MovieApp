@@ -2,7 +2,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-let movieSchema = new Schema({		//create a new schema - structure of data object
+//create a new schema - structure of data object
+let movieSchema = new Schema({		
     Title: String,
     Year: String,
     Rated: String,
@@ -28,7 +29,9 @@ let movieSchema = new Schema({		//create a new schema - structure of data object
     Production: String,
     Website: String,
     Response: String,
-    Comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }]	//refferes to Comment model
+	//refferes to Comment model
+    Comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }]	
 });
 
-module.exports = mongoose.model('Movie', movieSchema);		//create a new model called 'Movie' according to movieSchema
+//create a new model called 'Movie' according to movieSchema
+module.exports = mongoose.model('Movie', movieSchema);		
