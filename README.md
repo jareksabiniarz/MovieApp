@@ -20,7 +20,7 @@ POST /comments:
 
 GET /comments:
 - Fetches list of all comments present in application database.
-- Allows filtering comments by associated movie, by passing its ID.
+- Allows filtering comments by associated movie, by passing its ID as a value of key "movie".
 
 ### Installation
 
@@ -33,6 +33,7 @@ $ cd MovieApp
 $ npm install 
 $ node server
 ```
+
 
 ### Todos
 
