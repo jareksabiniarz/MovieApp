@@ -24,7 +24,7 @@ GET /comments:
 
 ### Installation
 
-MovieApp requires [Node.js](https://nodejs.org/) v4+ to run.
+MovieApp requires [Node.js](https://nodejs.org/) v4+ and [MongoDB](https://www.mongodb.com/) to run.
 
 Install the dependencies and devDependencies and start the server.
 
