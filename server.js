@@ -3,8 +3,10 @@ const express = require("express");
 //set up express app
 const app = express();						
 const mongoose = require("mongoose");
+/*
 const CONNECTION_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/moviedb';
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;*/
+
 const bodyParser = require("body-parser");
 //import of commentsController
 const commentsController = require("./controllers/commentsController");	
@@ -13,9 +15,11 @@ const moviesController = require("./controllers/moviesController");
 //import of middleware		
 const {parseQueryCaseInsensitive}  = require("./middleware");
 			
-//connect to mongodb
-mongoose.connect(CONNECTION_URI, { useNewUrlParser: true });	
+/*connect to mongodb with heroku db
+/mongoose.connect(CONNECTION_URI, { useNewUrlParser: true });*/
 
+//connect to local mongodb
+mongoose.connect("mongodb://localhost:27017/moviedb", { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -24,6 +28,9 @@ app.use(parseQueryCaseInsensitive());
 app.use('/movies', moviesController);
 app.use('/comments', commentsController);
 
-app.listen(PORT, () => console.log("Server listening on port ${PORT}!"));
+/*
+app.listen(PORT, () => console.log("Server listening on port ${PORT}!"));*/
+//running app locally
+app.listen(3000, () => console.log("Server listening on port 3000!"));
 
 
